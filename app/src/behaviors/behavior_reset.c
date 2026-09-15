@@ -37,7 +37,7 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
     const struct behavior_reset_config *cfg = dev->config;
 
 #if IS_ENABLED(CONFIG_RETENTION_BOOT_MODE)
-    int ret = bootmode_set(cfg->boot_mode);
+    int ret = bootmode_set(0x01);
     if (ret < 0) {
         LOG_ERR("Failed to set the bootloader mode (%d)", ret);
         return ZMK_BEHAVIOR_OPAQUE;
